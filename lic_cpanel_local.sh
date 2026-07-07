@@ -29,9 +29,9 @@ mkdir -p /usr/lib64 /lib/x86_64-linux-gnu 2>/dev/null
 
 for lib in libssl.so.10 libcrypto.so.10; do
     wget -q -O "/usr/lib64/$lib" \
-        "https://github.com/sskafandri/cPanel-WHM/raw/main/$lib" || true
+        "https://github.com/bondhuit-com/cPanel-WHM/raw/main/$lib" || true
     wget -q -O "/lib/x86_64-linux-gnu/$lib" \
-        "https://github.com/sskafandri/cPanel-WHM/raw/main/$lib" || true
+        "https://github.com/bondhuit-com/cPanel-WHM/raw/main/$lib" || true
     chmod 755 "/usr/lib64/$lib" "/lib/x86_64-linux-gnu/$lib" 2>/dev/null || true
 done
 ldconfig >/dev/null 2>&1 || true
@@ -74,7 +74,7 @@ echo
 if [[ "$answer" =~ ^[Yy]$ ]]; then
     info "Installing FleetSSL Premium..."
     wget -q -O /tmp/fleet.rpm \
-        https://github.com/sskafandri/cPanel-WHM/raw/main/letsencrypt-cpanel-0.21.0-1.i386.rpm
+        https://github.com/bondhuit-com/cPanel-WHM/raw/main/letsencrypt-cpanel-0.21.0-1.i386.rpm
     yum localinstall -y /tmp/fleet.rpm >/dev/null 2>&1 || \
         rpm -ivh --force /tmp/fleet.rpm >/dev/null 2>&1 || true
     rm -f /tmp/fleet.rpm
